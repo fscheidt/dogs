@@ -1,0 +1,36 @@
+[
+  {
+    "breed": "Borzoi",
+    "image": {
+      "src": "n02090622_2518.jpg",
+      "alt": "dog person",
+      "title": "a dog talking",
+      "source": "https://images.dog.ceo/breeds/borzoi/n02090622_2518.jpg"
+    },
+    "about": "Borzois, also called Russian Wolfhounds, were originally bred for hunting in Russia and are known for their speed and grace. The name \"Borzoi\" comes from the Russian word \"borzyi\", meaning \"swift.\""
+  },
+  {
+    "breed": "Border collie",
+    "image": {
+      "src": "n02106166_1936.jpg",
+      "title": "a dog dreaming",
+      "source": "https://images.dog.ceo/breeds/collie-border/n02106166_1936.jpg"
+    },
+    "about": "A breed renowned for its intelligence, agility, and herding abilities. Border Collies are highly energetic and thrive in environments where they have tasks to do, making them excellent working dogs and companions for active families."
+  },
+  {
+    "breed": "Good boi",
+    "image": {
+      "src": "n02104365_1837.jpg"
+    },
+    "about": "Good breed."
+  },
+  {
+    "breed": "Affenpinscher",
+    "image": {
+      "src": "n02110627_1966.jpg",
+      "source": "https://images.dog.ceo/breeds/affenpinscher/n02110627_1966.jpg"
+    },
+    "about": "A small toy breed known for its monkey-like expression (the name \"Affenpinscher\" comes from the German word affe, meaning \"monkey\"). They are often referred to as the \"monkey terrier.\""
+  }
+]

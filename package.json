@@ -1,0 +1,33 @@
+{
+	"name": "dogs",
+	"description": "A Sveltekit SSG template project",
+	"version": "0.1.0",
+	"author": {
+		"name": "Felippe Scheidt",
+		"email": "felippescheidt@gmail.com"
+	},
+	"license": "MIT",
+	"keywords": [
+		"sveltekit",
+		"svelte",
+		"template"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fscheidt/dogs.git"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-static": "^3.0.6",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"svelte": "^5.0.0",
+		"vite": "^5.0.3"
+	}
+}
