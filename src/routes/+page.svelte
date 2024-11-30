@@ -1,4 +1,8 @@
+<script>
+import Readme from '$lib/data/README.md'
+</script>
+
 <main>
-    <h1>SvelteKit static site</h1>
-    
+    <h1>Readme</h1>
+    <Readme/>
 </main>
