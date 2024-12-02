@@ -10,14 +10,14 @@
     font-family: "Albert Sans";
     font-style: normal;
     font-weight: 400;
-    src: url("fonts/albert-sans-v1-latin-regular.woff2") format("woff2");
+    src: url("/static/fonts/albert-sans-v1-latin-regular.woff2") format("woff2");
   }
   @font-face {
     font-display: swap;
     font-family: "Albert Sans";
     font-style: normal;
     font-weight: 900;
-    src: url("fonts/albert-sans-v1-latin-900.woff2") format("woff2");
+    src: url("/static/fonts/albert-sans-v1-latin-900.woff2") format("woff2");
   }
   :root {
     --zoom-level: 1;
