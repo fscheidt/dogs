@@ -1,49 +1,73 @@
 <script>
 import {getContext, onMount} from "svelte";
-let {breedName} = $props();
+let {breedName="corgi"} = $props();
 let endpoint = $state(`https://dog.ceo/api/breed/${breedName}/images`);
+let testUrl = "https://images.dog.ceo/breeds/shihtzu/Rudy_Small.jpg";
 let photos = $state(null);
+let picture = $state(null);
 let photoIdx = $state(0);
-function getNext(){
-    return Math.floor(Math.random(0,1)*photos.length)
+let message = $state(null);
+let debug = $state(false);
+function getNext () {
+    photoIdx = Math.floor(Math.random(0,1)*photos.length);
+    return photos[photoIdx] || testUrl;
 }
 async function getBreedPhotos(){
     const response = await fetch(endpoint);
-    const data = await response.json();
     if (response.ok) {
+        const data = response.json();
         return data;
-    } else {throw new Error(data); }
+    }else{
+        const errorDetails = {
+            status: response.status,
+            statusText: response.statusText,
+            url: response.url,
+            headers: Array.from(response.headers.entries()),
+        };
+        throw new Error(`HTTP status ${JSON.stringify(errorDetails, null, 2)}`);
+    }
 }
 onMount(()=>{
     getBreedPhotos().then((data)=>{
         photos = data.message;
+        picture = getNext();
+    }).catch((error)=>{
+        message = `${error}`;
     })
-})
+});
 </script>
 <main>
-
-    <h2>{breedName}</h2>
-    <p>photos: {photos?.length}</p>
+    <h1>{breedName}</h1>
+    <p>{photos?.length} photos 
+        <button onclick={()=>picture=getNext()}>surprise</button>
+        {#if debug}<button onclick={()=>picture=testUrl}>test</button>{/if}
+    </p>
+    {#if debug}<details><summary>data</summary><pre>{@html JSON.stringify(photos,null,2)}</pre></details>{/if}
+    {#if message}
+        <pre class="error">{message}</pre>
+    {/if}
     {#if photos}
-    <button onclick={()=>photoIdx=getNext()}>random</button>
     <div>
-        <img src={photos[photoIdx]}/>
+        <img src={picture} alt="{breedName}" title="{breedName} [{photoIdx}]"/>
     </div>
     {/if}
-
 </main>
+
 <style>
 main{
-    display: inline-grid;
-    justify-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
+    min-height: 80vh;
 }
 img{
     max-width: 100%;
-    max-height: 95vh;
+    max-height: 70vh;
 }
-h2{
+h1{
     padding: 0;
     margin: 0;
+    text-transform: capitalize;
 }
 </style>

@@ -5,9 +5,9 @@ let {children} = $props();
 </script>
 
 <nav>
-    <a href={`${base}/`}>home</a>
-    <a href={`${base}/dogs`}>dogs</a>
+    <a href={`${base}/`}>dogs</a>
     <a href={`${base}/breeds`}>breeds</a>
+    <a href={`${base}/readme`}>readme</a>
 </nav>
 
 <div class="content">
