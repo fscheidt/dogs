@@ -1,10 +1,17 @@
 <script>
+import {onMount} from "svelte";
 import {user} from "$lib/app.svelte.js";
 import dogs from '$lib/data/dogs.json';
 import Dog from "$lib/Dog.svelte";
-const userPrefs = $user || {
+let userPrefs = $state($user || {
     search: ""
+})
+function save_storage(){
+    chrome.storage.local.set("userPrefs", userPrefs).then(()=>{
+        console.log('user preferences saved');
+    })
 }
+
 </script>
 
 <main>
@@ -13,7 +20,9 @@ const userPrefs = $user || {
     </header>
 
     <input type="text" bind:value={userPrefs.search}>
-    <pre>{JSON.stringify(userPrefs, null, 2)}</pre>
+    <button onclick={()=>{save_storage()}}>save</button>
+    <pre>userPrefs:{JSON.stringify(userPrefs, null, 2)}</pre>
+    <pre>$user: {JSON.stringify($user, null, 2)}</pre>
 
     <p style="font-style:italic;">from <a href="https://dog.ceo/dog-api/" target="_blank">dog API</a></p>
     
