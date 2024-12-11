@@ -27,6 +27,7 @@ function save_storage(){
     <p style="font-style:italic;">from <a href="https://dog.ceo/dog-api/" target="_blank">dog API</a></p>
     
     <div class="contents">
+        
         {#each dogs as dog}
             <Dog {dog}/>
         {/each}
