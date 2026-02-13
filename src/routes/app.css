@@ -10,7 +10,7 @@ html.light {
   --fg-1: #212121;
   --fg-2: #4d4d4d;
   --link: #1c7ed4;
-  --link-hover: #3492e5;
+  --link-hover: #78bbf6;
   --link-active: #176bb5;
   --text-color: #323131;
   --selected: #510948;
@@ -24,7 +24,7 @@ html.dark {
   --fg-2: #b3b3b3;
   --fg-3: #999;
   --link: #73c1fc;
-  --link-hover: #91cefd;
+  --link-hover: #2d3031;
   --link-active: #4baffb;
   --text-color: #ffffff;
   --selected: #ffa4f7;
@@ -75,8 +75,9 @@ a {
   text-decoration: none;
 }
 a:hover {
-  background-color: #cbe0f2;
-  color: var(--link-hover);
+  /* background-color: #cbe0f2; */
+  background-color: var(--link-hover);
+  color: var(--text-color);
 }
 a:active {
   color: var(--link-active);
