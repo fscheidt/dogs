@@ -1,5 +1,5 @@
 <script>
-let {dog} = $props();
+let { dog } = $props();
 </script>
 
 <main>

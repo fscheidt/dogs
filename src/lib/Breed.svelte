@@ -44,8 +44,8 @@ onMount(()=>{
 <main>
   <h1>{breedName}</h1>
   <p>{photos?.length} photos 
-    <button onclick={()=>picture=getNext()}>surprise</button>
   </p>
+  <button onclick={()=>picture=getNext()}>surprise</button>
   {#if message}
     <pre class="error">{message}</pre>
   {/if}
@@ -53,6 +53,7 @@ onMount(()=>{
     <div>
       {#if debug}
         <pre>{picture}</pre>
+        <pre>{photoIdx}</pre>
       {/if}
       <img src={picture} alt="{breedName}" title="{breedName} [{photoIdx}]"/>
     </div>
@@ -60,19 +61,25 @@ onMount(()=>{
 </main>
 
 <style>
-main{
+main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
   min-height: 80vh;
+  padding: 0 10px;
 }
-img{
+img {
   max-width: 100%;
   max-height: 70vh;
+  border-radius: 5px;
+  filter: drop-shadow(2px 4px 6px rgb(59, 59, 59));
 }
-h1{
-  padding: 0;
+h1 {
+  font-family: var(--base-font);
+  border-bottom: 2px solid #510948;
+  color: #510948;
+  padding: .25rem 0rem;
   margin: 0;
   text-transform: capitalize;
 }
