@@ -1,7 +1,7 @@
 {
 	"name": "dogs",
 	"description": "SvelteKit SSG project",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"author": {
 		"name": "Felippe Scheidt",
 		"email": "felippescheidt@gmail.com"
