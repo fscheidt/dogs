@@ -1,6 +1,6 @@
 # Svelte SSG
 
-DogApp is a toy project designed to demonstrate how to deploy a SvelteKit app as a static site. This requires modifying the default build process to support Static Site Generation (SSG). This project is also on [gh pages](https://fscheidt.github.io/dogs/).
+DogApp is a toy project designed to demonstrate how to deploy a SvelteKit app as a static site. This requires modifying the default build process to support Static Site Generation (SSG). This project is also hosted in this [site](https://fscheidt.github.io/dogs/).
 
 Current Versions Used:
 - Svelte 5

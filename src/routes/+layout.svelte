@@ -40,7 +40,7 @@ onMount(()=>{
 
 <footer>
   <nav>
-    <a href="https://fscheidt.github.io/dogs" title="GitHub Pages" target="_blank">gh pages</a>
+    <a href="https://fscheidt.github.io/dogs" title="GitHub Pages" target="_blank">site</a>
     <a href="https://github.com/fscheidt/dogs" title="Project source-code" target="_blank">source</a>
     {#if app.canMutateUiState}      
       <label>
