@@ -4,13 +4,14 @@ let {
 } = $props();
 import { getContext, onMount } from "svelte";
 import { app } from "$lib/ui.svelte";
+import DogCard from "$lib/DogCard.svelte";
 
 let endpoint = $state(`https://dog.ceo/api/breed/${breedName}/images`);
 let photos = $state(null);
-let picture = $state(null);
+let url = $state(null);
 let photoIdx = $state(0);
 let message = $state(null);
-let debug = $derived(app.is_debug);
+let debug = $derived(app.debugMode);
 
 function getNext () {
     photoIdx = Math.floor(Math.random(0,1)*photos.length);
@@ -35,28 +36,26 @@ async function getBreedPhotos(){
 onMount(()=>{
   getBreedPhotos().then((data)=>{
     photos = data.message;
-    picture = getNext();
+    url = getNext();
   }).catch((error)=>{
     message = `${error}`;
   })
 });
 </script>
 <main>
-  <h1>{breedName}</h1>
-  <p>{photos?.length} photos 
-  </p>
-  <button onclick={()=>picture=getNext()}>surprise</button>
+  <h1>{ breedName }</h1>
+  <div class="row">
+    <button 
+      class="surprise" 
+      onclick={() => url=getNext()}
+      >Surprise</button>
+    <span>{photoIdx+1} of {photos?.length} photos</span>
+  </div>
   {#if message}
     <pre class="error">{message}</pre>
   {/if}
   {#if photos}
-    <div>
-      {#if debug}
-        <pre>{picture}</pre>
-        <pre>{photoIdx}</pre>
-      {/if}
-      <img src={picture} alt="{breedName}" title="{breedName} [{photoIdx}]"/>
-    </div>
+    <DogCard {url} {debug} {photoIdx} {breedName} />
   {/if}
 </main>
 
@@ -69,11 +68,10 @@ main {
   min-height: 80vh;
   padding: 0 10px;
 }
-img {
-  max-width: 100%;
-  max-height: 70vh;
-  border-radius: 5px;
-  filter: drop-shadow(2px 4px 6px rgb(59, 59, 59));
+.row {
+  display: flex;
+  gap: 1rem;
+  padding: .5rem 0;
 }
 h1 {
   font-family: var(--base-font);

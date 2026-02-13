@@ -9,8 +9,10 @@ import "./app.css"
   <a href={`${base}/`}>home</a>
   <a href={`${base}/breeds`}>breeds</a>
   <a href={`${base}/readme`}>readme</a>
-  {#if app.allow_toggle_debug}
-    <input type="checkbox" bind:checked={app.is_debug}>
+  {#if app.canMutateUiState}
+    <input 
+      type="checkbox" 
+      bind:checked={app.debugMode}>
   {/if}
 </nav>
 

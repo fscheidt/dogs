@@ -1,5 +1,7 @@
 export const app = $state({
-  allow_toggle_debug: false,
-  is_debug: true,
-  search: "",
+  uiStateMutable: true,
+  canMutateUiState: true,
+  debugMode: true,
+  searchQuery: "",
+  theme: "dark",
 })
