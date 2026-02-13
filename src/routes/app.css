@@ -46,6 +46,14 @@ body {
   min-height: 100vh;
   background-color: var(--bg-1);
 }
+button {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+button:hover, input:hover {
+  filter: invert(.8);
+  cursor: pointer;
+}
 .content {
   flex: 1;
   padding: 1rem;

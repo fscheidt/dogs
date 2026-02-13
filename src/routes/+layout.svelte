@@ -28,13 +28,8 @@ onMount(()=>{
     <input 
       type="checkbox" 
       bind:checked={app.debugMode}
-    />
-    <label>
-      <button 
-        type="checkbox" 
-        onclick={()=> { toggleTheme() }}>
-        {themeBtn}</button>
-    </label>
+      title="ON/OFF"
+    />    
   {/if}
   <!-- {#if app.debugMode}<pre>{JSON.stringify(app,null,2)}</pre>{/if} -->
 </nav>
@@ -47,6 +42,14 @@ onMount(()=>{
   <nav>
     <a href="https://fscheidt.github.io/dogs" title="GitHub Pages" target="_blank">gh pages</a>
     <a href="https://github.com/fscheidt/dogs" title="Project source-code" target="_blank">source</a>
+    {#if app.canMutateUiState}      
+      <label>
+        <button 
+          type="checkbox" 
+          onclick={()=> { toggleTheme() }}>
+          {themeBtn}</button>
+      </label>
+    {/if}
   </nav>
 </footer>
 
