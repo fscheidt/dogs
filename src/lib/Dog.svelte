@@ -23,9 +23,11 @@ main {
   background-color: rgb(214, 206, 220);
   padding: 20px;
   max-width: 300px;
-  box-shadow: 3px 3px 5px 1px #b8b8b8;
 }
 img {
   max-width: 100%;
+  max-height: 70vh;
+  border-radius: 5px;
+  filter: drop-shadow(2px 4px 6px rgb(59, 59, 59));
 }
 </style>
