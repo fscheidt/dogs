@@ -23,6 +23,11 @@ Install the static adapter
 npm i -D @sveltejs/adapter-static
 ```
 
+also these dependencies:
+```bash
+npm i -D mdsvex
+```
+
 ### `/src/routes/layout.js`
 
 Create a file `+layout.js` with the content:

@@ -6,51 +6,51 @@ let breeds = Object.keys(data?.message);
 let idx = $state(0);
 let breedName = $state(null);
 let checkedInput = () => {
-    const checkedInput = document.querySelector(`input[value="${breedName}"]`);
-    if (checkedInput) {
-        checkedInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    return checkedInput;
+  const checkedInput = document.querySelector(`input[value="${breedName}"]`);
+  if (checkedInput) {
+    checkedInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  return checkedInput;
 }
 onMount(()=>{
-    idx = Math.floor(Math.random() * breeds?.length);
-    breedName = breeds[idx] || "corgi";
-    checkedInput()
+  idx = Math.floor(Math.random() * breeds?.length);
+  breedName = breeds[idx] || "corgi";
+  checkedInput()
 });
 </script>
 
 <main>
-    <div class="contents">
-        <div id="breeds5">
-            <header>
-                <h1 id="title">Breeds</h1>
-                <p>{breeds?.length} breeds</p>
-            </header>
-            <div id="breeds">
-            <ul>
-                {#each breeds as name}
-                <li>
-                    <label>
-                        <input name="selectedBreed" 
-                            type="radio" 
-                            onclick={()=>{breedName=name;}} 
-                            checked={breedName==name}
-                            value={name}>
-                        {name}
-                    </label>
-                </li>
-                {/each}
-            </ul>
-            </div>
-        </div>
-        <div id="photos">
-            {#key breedName}
-                {#if breedName}
-                    <Breed {breedName}/>
-                {/if}
-            {/key}
-        </div>
+  <div class="contents">
+    <div id="breeds5">
+      <header>
+        <h1 id="title">Breeds</h1>
+        <p>{breeds?.length} breeds</p>
+      </header>
+      <div id="breeds">
+      <ul>
+        {#each breeds as name}
+        <li>
+          <label>
+            <input name="selectedBreed" 
+              type="radio" 
+              onclick={()=>{breedName=name;}} 
+              checked={breedName==name}
+              value={name}>
+            {name}
+          </label>
+        </li>
+        {/each}
+      </ul>
+      </div>
     </div>
+    <div id="photos">
+      {#key breedName}
+        {#if breedName}
+          <Breed {breedName}/>
+        {/if}
+      {/key}
+    </div>
+  </div>
 </main>
 
 <style>
