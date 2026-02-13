@@ -21,8 +21,8 @@ onMount(()=>{
 
 <nav>
   <a href={`${base}/`}>home</a>
-  <a href={`${base}/details`}>details</a>
   <a href={`${base}/breeds`}>breeds</a>
+  <a href={`${base}/details`}>details</a>
   <a href={`${base}/readme`}>readme</a>
   {#if app.canMutateUiState}
     <input 
