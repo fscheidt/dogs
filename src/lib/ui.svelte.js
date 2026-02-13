@@ -1,6 +1,6 @@
 export const app = $state({
   canMutateUiState: true,
-  debugMode: false,
+  debugMode: true,
   searchQuery: "",
-  theme: "dark",
+  theme: "dark", // [dark, light]
 })

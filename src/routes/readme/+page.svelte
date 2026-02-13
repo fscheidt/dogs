@@ -12,7 +12,7 @@ const version = __APP_VERSION__;
 <style>
 :global {
   .md pre:has(code) {
-    background-color: #e7e7e7 !important;
+    background-color: var(--bg-1) !important;
     padding: 1rem;
     line-height: 1.2rem;
     border-radius: 4px;

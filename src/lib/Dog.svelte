@@ -2,7 +2,7 @@
 let { dog } = $props();
 </script>
 
-<main>
+<div class="content">
   <h2>{dog.breed}</h2>
   <p>{dog?.about}</p>
   <p>
@@ -16,11 +16,12 @@ let { dog } = $props();
       <a title="image source" href={dog?.image?.source} target="_blank">image</a>
     </p>
   {/if}
-</main>
+</div>
 
 <style>
-main {
-  background-color: rgb(214, 206, 220);
+div.content {
+  background-color: var(--bg-2);
+  color: var(--text-color);
   padding: 20px;
   max-width: 300px;
 }

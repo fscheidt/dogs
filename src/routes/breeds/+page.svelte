@@ -70,7 +70,7 @@ onMount(()=>{
     padding: 0 10px 10px 0px;
 }
 #breeds label:has(input:checked){
-    color: #510948;
+    color: var(--selected);
     font-weight: 900;
 }
 #breeds label{
@@ -89,7 +89,8 @@ onMount(()=>{
     border-radius: 10px;
 }
 #breeds::-webkit-scrollbar-thumb:hover {
-    background: #8151b9;
+    background: #8151b9 !important;
+    filter: invert(1) saturate(2) hue-rotate(45deg) !important;
 }
 ul{
     padding: 0;
@@ -101,6 +102,6 @@ li{
 }
 label:hover{
     cursor: pointer;
-    color: #801471;
+    filter: invert(0.1) saturate(2) hue-rotate(45deg) !important;
 }
 </style>

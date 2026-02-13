@@ -75,8 +75,8 @@ main {
 }
 h1 {
   font-family: var(--base-font);
-  border-bottom: 2px solid #510948;
-  color: #510948;
+  border-bottom: 2px solid var(--selected);
+  color: var(--selected);
   padding: .25rem 0rem;
   margin: 0;
   text-transform: capitalize;

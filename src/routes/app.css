@@ -3,18 +3,21 @@
   --zoom-level: 1;
   --base-font: "Albert Sans";
 }
-html {
+html.light {
   --bg-1: #fff;
-  --bg-2: #e0e6eb;
+  --bg-2: #b5c4d0;
   --bg-3: #c2cdd6;
   --fg-1: #212121;
   --fg-2: #4d4d4d;
   --link: #1c7ed4;
   --link-hover: #3492e5;
   --link-active: #176bb5;
+  --text-color: #323131;
+  --selected: #510948;
 }
 html.dark {
-  --bg-1: #2e2e2e;
+  --bg-111: #2e2e2e;
+  --bg-1: #393f41;
   --bg-2: #4d4d4d;
   --bg-3: #666;
   --fg-1: #e6e6e6;
@@ -23,6 +26,8 @@ html.dark {
   --link: #73c1fc;
   --link-hover: #91cefd;
   --link-active: #4baffb;
+  --text-color: #ffffff;
+  --selected: #ffa4f7;
 }
 body {
   font-family: var(--base-font);
@@ -32,18 +37,21 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  color: var(--text-color);
+  background-color: var(--bg-1);
 }
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--bg-1);
 }
 .content {
   flex: 1;
   padding: 1rem;
 }
 .footer {
-  background-color: #f1f1f1;
+  background-color: var(--bg-1);
   text-align: center;
   padding: 1em 0;
 }
