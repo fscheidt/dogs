@@ -1,7 +1,6 @@
 <script>
 let {
   url,
-  photoIdx,
   breedName,
   debug = false,
 } = $props();
@@ -10,12 +9,11 @@ let {
 <div>
   {#if debug}
     <pre>{url}</pre>
-    <pre>{photoIdx}</pre>
   {/if}
   <img 
     src={url} 
     alt="{breedName}" 
-    title="{breedName} [{photoIdx}]"/>
+    title="{breedName}"/>
 </div>
 
 <style>

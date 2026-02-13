@@ -55,7 +55,7 @@ onMount(()=>{
     <pre class="error">{message}</pre>
   {/if}
   {#if photos}
-    <DogCard {url} {debug} {photoIdx} {breedName} />
+    <DogCard {url} {debug} {breedName} />
   {/if}
 </main>
 
