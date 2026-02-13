@@ -19,9 +19,6 @@ onMount(()=>{
 </script>
 
 <div>
-  {#if debug}
-    <pre>{url}</pre>    
-  {/if}
   <figure>
     {#if breedName}
       <figcaption>{breedName}</figcaption>
@@ -31,11 +28,17 @@ onMount(()=>{
       alt="{breedName}" 
       title="{breedName}"/>
   </figure>
+  {#if debug}
+    <pre>{url}</pre>    
+  {/if}
 </div>
 
 <style>
 div {
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 pre { 
   margin: .5rem 0;
