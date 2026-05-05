@@ -1,7 +1,7 @@
 {
 	"name": "dogs",
-	"description": "SvelteKit SSG project",
-	"version": "0.1.5",
+	"description": "Dog project",
+	"version": "0.1.6",
 	"author": {
 		"name": "Felippe Scheidt",
 		"email": "felippescheidt@gmail.com"
@@ -10,6 +10,7 @@
 	"keywords": [
 		"sveltekit",
 		"svelte",
+		"dog-ceo",
 		"template"
 	],
 	"repository": {
@@ -24,13 +25,11 @@
 		"prepare": "svelte-kit sync || echo ''"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^7.0.0",
 		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.50.2",
-		"@sveltejs/vite-plugin-svelte": "^6.2.4",
-		"mdsvex": "^0.12.6",
-		"svelte": "^5.49.2",
-		"vite": "^7.3.1",
-		"vite-plugin-devtools-json": "^1.0.0"
+		"@sveltejs/kit": "^2.57.0",
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
+		"mdsvex": "^0.12.7",
+		"svelte": "^5.55.2",
+		"vite": "^8.0.7"
 	}
 }
